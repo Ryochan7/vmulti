@@ -1,1 +1,6 @@
-
+.directory
+*.*~
+*.filters
+*.user
+*.*.suo
+*.sdf
