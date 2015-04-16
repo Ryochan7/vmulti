@@ -11,7 +11,18 @@
     #define __in_ecount(x)
     typedef void* PVOID;
     typedef PVOID HDEVINFO;
+
+    #ifdef __cplusplus
+    extern "C" {
+    #endif
+
     WINHIDSDI BOOL WINAPI HidD_SetOutputReport(HANDLE, PVOID, ULONG);
+    WINHIDSDI BOOL WINAPI HidD_GetPreparsedData(HANDLE, _HIDP_PREPARSED_DATA**);
+    WINHIDSDI BOOL WINAPI HidD_FreePreparsedData(PHIDP_PREPARSED_DATA);
+
+    #ifdef __cplusplus
+    }
+    #endif
 #endif
 
 typedef struct _vmulti_client_t
