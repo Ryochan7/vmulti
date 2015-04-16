@@ -1,6 +1,12 @@
 #if !defined(_VMULTI_COMMON_H_)
 #define _VMULTI_COMMON_H_
 
+#ifdef __GNUC__
+    typedef unsigned char BYTE;
+    typedef unsigned short USHORT;
+    typedef int BOOL;
+#endif
+
 //
 //These are the device attributes returned by vmulti in response
 // to IOCTL_HID_GET_DEVICE_ATTRIBUTES.
