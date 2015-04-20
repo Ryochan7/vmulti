@@ -189,6 +189,12 @@ HID_REPORT_DESCRIPTOR DefaultReportDescriptor[] = {
     0x75, 0x08,                         //     Report Size (8)
     0x95, 0x01,                         //     Report Count (1)
     0x81, 0x06,                         //     Input (Data, Variable, Relative)
+    0x05, 0x0c,                         //     Usage Page (Consumer Devices)
+    0x0a, 0x38, 0x02,                   //     Usage (AC Pan)
+    0x15, 0x81,                         //     Logical Minimum (-127)
+    0x25, 0x7f,                         //     Logical Maximum (127)
+    0x75, 0x08,                         //     Report Size (8)
+    0x81, 0x06,                         //     Input (Data, Variable, Relative)
     0xc0,                               //   END_COLLECTION
     0xc0,                               // END_COLLECTION
 
