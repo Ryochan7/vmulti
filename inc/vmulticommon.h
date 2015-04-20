@@ -196,6 +196,8 @@ typedef struct _VMULTI_RELATIVE_MOUSE_REPORT
 
     BYTE        WheelPosition;
 
+    BYTE        HWheelPosition;
+
 } VMultiRelativeMouseReport;
 #pragma pack()
 

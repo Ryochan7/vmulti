@@ -173,7 +173,7 @@ BOOL vmulti_update_mouse(pvmulti_client vmulti, BYTE button, USHORT x, USHORT y,
 }
 
 BOOL vmulti_update_relative_mouse(pvmulti_client vmulti, BYTE button,
-BYTE x, BYTE y, BYTE wheelPosition)
+BYTE x, BYTE y, BYTE wheelPosition, BYTE hWheelPosition)
 {
     VMultiControlReportHeader* pReport = NULL;
     VMultiRelativeMouseReport* pMouseReport = NULL;
@@ -201,6 +201,7 @@ BYTE x, BYTE y, BYTE wheelPosition)
     pMouseReport->XValue = x;
     pMouseReport->YValue = y;
     pMouseReport->WheelPosition = wheelPosition;
+    pMouseReport->HWheelPosition = hWheelPosition;
 
     // Send the report
     return HidOutput(FALSE, vmulti->hControl, (PCHAR)vmulti->controlReport, CONTROL_REPORT_SIZE);
