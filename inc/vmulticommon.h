@@ -27,8 +27,10 @@
 #define REPORTID_DIGI           0x05
 #define REPORTID_JOYSTICK       0x06
 #define REPORTID_KEYBOARD       0x07
+#define REPORTID_VOLUME         0x08
 #define REPORTID_MESSAGE        0x10
 #define REPORTID_CONTROL        0x40
+
 
 //
 // Control defined report size
@@ -199,6 +201,18 @@ typedef struct _VMULTI_RELATIVE_MOUSE_REPORT
     BYTE        HWheelPosition;
 
 } VMultiRelativeMouseReport;
+#pragma pack()
+
+#pragma pack(1)
+typedef struct _VMULTI_MULTIMEDIA_REPORT
+{
+    BYTE        ReportID;
+
+    BYTE        MultimediaKeys;
+
+    BYTE        ExtraKeys;
+
+} VMultiMultimediaReport;
 #pragma pack()
 
 //

@@ -328,6 +328,35 @@ HID_REPORT_DESCRIPTOR DefaultReportDescriptor[] = {
     0x81, 0x00,                         //   INPUT (Data,Ary,Abs)
     0xc0,                               // END_COLLECTION
 
+// Multimedia Keys here
+    0x05, 0x0c,                         // Usage Page (Consumer Devices)
+    0x09, 0x01,                         // Usage (Consumer Control)
+    0xa1, 0x01,                         // Collection (Application)
+    0x85, REPORTID_VOLUME,              //   Report ID (Volume)
+    0x05, 0x0c,                         //   Usage Page (Consumer Devices)
+    0x15, 0x00,                         //   Logical Minimum (0)
+    0x25, 0x01,                         //   Logical Maximum (1)
+    0x75, 0x01,                         //   Report Size (1)
+    0x95, 0x10,                         //   Report Count (16)
+    0x09, 0xb5,                         //   Usage (Scan Next Track)
+    0x09, 0xb6,                         //   Usage (Scan Previous Track)
+    0x09, 0xb7,                         //   Usage (Stop)
+    0x09, 0xcd,                         //   Usage (Play / Pause)
+    0x09, 0xe2,                         //   Usage (Mute)
+    0x09, 0xea,                         //   Usage (Volume Down)
+    0x09, 0xe9,                         //   Usage (Volume Up)
+    0x0a, 0x23, 0x02,                   //   Usage (WWW Home)
+    0x0a, 0x94, 0x01,                   //   Usage (My Computer)
+    0x0a, 0x92, 0x01,                   //   Usage (Calculator)
+    0x0a, 0x2a, 0x02,                   //   Usage (WWW fav)
+    0x0a, 0x21, 0x02,                   //   Usage (WWW search)
+    0x0a, 0x26, 0x02,                   //   Usage (WWW stop)
+    0x0a, 0x24, 0x02,                   //   Usage (WWW back)
+    0x0a, 0x83, 0x01,                   //   Usage (Media sel)
+    0x0a, 0x8a, 0x01,                   //   Usage (Mail)
+    0x81, 0x02,                         //   Input (Data, Variable, Absolute)
+    0xc0,                               //  End Collection
+
 //
 // Vendor defined control report starts here
 //

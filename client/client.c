@@ -352,6 +352,36 @@ BOOL vmulti_update_keyboard(pvmulti_client vmulti, BYTE shiftKeyFlags, BYTE keyC
     return HidOutput(FALSE, vmulti->hControl, (PCHAR)vmulti->controlReport, CONTROL_REPORT_SIZE);
 }
 
+BOOL vmulti_update_keyboard_multimedia(pvmulti_client vmulti, BYTE multiKeys, BYTE extraKeys)
+{
+    VMultiControlReportHeader* pReport = NULL;
+    VMultiMultimediaReport* pKeyboardReport = NULL;
+
+    if (CONTROL_REPORT_SIZE <= sizeof(VMultiControlReportHeader) + sizeof(VMultiMultimediaReport))
+    {
+        return FALSE;
+    }
+
+    //
+    // Set the report header
+    //
+
+    pReport = (VMultiControlReportHeader*)vmulti->controlReport;
+    pReport->ReportID = REPORTID_CONTROL;
+    pReport->ReportLength = sizeof(VMultiKeyboardReport);
+
+    //
+    // Set the input report
+    //
+    pKeyboardReport = (VMultiMultimediaReport*)(vmulti->controlReport + sizeof(VMultiControlReportHeader));
+    pKeyboardReport->ReportID = REPORTID_VOLUME;
+    pKeyboardReport->MultimediaKeys = multiKeys;
+    pKeyboardReport->ExtraKeys = extraKeys;
+
+    // Send the report
+    return HidOutput(FALSE, vmulti->hControl, (PCHAR)vmulti->controlReport, CONTROL_REPORT_SIZE);
+}
+
 BOOL vmulti_write_message(pvmulti_client vmulti, VMultiMessageReport* pReport)
 {
     VMultiControlReportHeader* pReportHeader;
