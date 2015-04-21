@@ -352,7 +352,7 @@ BOOL vmulti_update_keyboard(pvmulti_client vmulti, BYTE shiftKeyFlags, BYTE keyC
     return HidOutput(FALSE, vmulti->hControl, (PCHAR)vmulti->controlReport, CONTROL_REPORT_SIZE);
 }
 
-BOOL vmulti_update_keyboard_multimedia(pvmulti_client vmulti, BYTE multiKeys, BYTE extraKeys)
+BOOL vmulti_update_keyboard_enhanced(pvmulti_client vmulti, BYTE multiKeys, BYTE extraKeys)
 {
     VMultiControlReportHeader* pReport = NULL;
     VMultiMultimediaReport* pKeyboardReport = NULL;

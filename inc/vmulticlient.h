@@ -25,7 +25,7 @@ BOOL vmulti_update_joystick(pvmulti_client vmulti, USHORT buttons, BYTE hat, BYT
 
 BOOL vmulti_update_keyboard(pvmulti_client vmulti, BYTE shiftKeyFlags, BYTE keyCodes[KBD_KEY_CODES]);
 
-BOOL vmulti_update_keyboard_multimedia(pvmulti_client vmulti, BYTE multiKeys, BYTE extraKeys);
+BOOL vmulti_update_keyboard_enhanced(pvmulti_client vmulti, BYTE multiKeys, BYTE extraKeys);
 
 BOOL vmulti_write_message(pvmulti_client vmulti, VMultiMessageReport* pReport);
 
