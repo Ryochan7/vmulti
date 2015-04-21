@@ -27,7 +27,7 @@
 #define REPORTID_DIGI           0x05
 #define REPORTID_JOYSTICK       0x06
 #define REPORTID_KEYBOARD       0x07
-#define REPORTID_VOLUME         0x08
+#define REPORTID_ENHANCED_KEY   0x08
 #define REPORTID_MESSAGE        0x10
 #define REPORTID_CONTROL        0x40
 

@@ -332,7 +332,7 @@ HID_REPORT_DESCRIPTOR DefaultReportDescriptor[] = {
     0x05, 0x0c,                         // Usage Page (Consumer Devices)
     0x09, 0x01,                         // Usage (Consumer Control)
     0xa1, 0x01,                         // Collection (Application)
-    0x85, REPORTID_VOLUME,              //   Report ID (Volume)
+    0x85, REPORTID_ENHANCED_KEY,        //   Report ID (Volume)
     0x05, 0x0c,                         //   Usage Page (Consumer Devices)
     0x15, 0x00,                         //   Logical Minimum (0)
     0x25, 0x01,                         //   Logical Maximum (1)

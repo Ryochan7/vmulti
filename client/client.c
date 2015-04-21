@@ -374,7 +374,7 @@ BOOL vmulti_update_keyboard_multimedia(pvmulti_client vmulti, BYTE multiKeys, BY
     // Set the input report
     //
     pKeyboardReport = (VMultiMultimediaReport*)(vmulti->controlReport + sizeof(VMultiControlReportHeader));
-    pKeyboardReport->ReportID = REPORTID_VOLUME;
+    pKeyboardReport->ReportID = REPORTID_ENHANCED_KEY;
     pKeyboardReport->MultimediaKeys = multiKeys;
     pKeyboardReport->ExtraKeys = extraKeys;
 
