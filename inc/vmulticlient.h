@@ -3,6 +3,10 @@
 
 #include "vmulticommon.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct _vmulti_client_t* pvmulti_client;
 
 pvmulti_client vmulti_alloc(void);
@@ -30,5 +34,9 @@ BOOL vmulti_update_keyboard_enhanced(pvmulti_client vmulti, BYTE multiKeys, BYTE
 BOOL vmulti_write_message(pvmulti_client vmulti, VMultiMessageReport* pReport);
 
 BOOL vmulti_read_message(pvmulti_client vmulti, VMultiMessageReport* pReport);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
