@@ -6,15 +6,20 @@
 
 #include "vmulticlient.h"
 
-#if __GNUC__
+#ifdef __GNUC__
     #define __in
     #define __in_ecount(x)
     typedef void* PVOID;
     typedef PVOID HDEVINFO;
 
+    #ifndef WINHIDSDI
+      #define WINHIDSDI DECLSPEC_IMPORT
+    #endif
+
     WINHIDSDI BOOL WINAPI HidD_SetOutputReport(HANDLE, PVOID, ULONG);
     WINHIDSDI BOOL WINAPI HidD_GetPreparsedData(HANDLE, PHIDP_PREPARSED_DATA*);
     WINHIDSDI BOOL WINAPI HidD_FreePreparsedData(PHIDP_PREPARSED_DATA);
+
 #endif
 
 typedef struct _vmulti_client_t
@@ -131,7 +136,8 @@ void vmulti_disconnect(pvmulti_client vmulti)
     vmulti->hMessage = NULL;
 }
 
-BOOL vmulti_update_mouse(pvmulti_client vmulti, BYTE button, USHORT x, USHORT y, BYTE wheelPosition)
+BOOL vmulti_update_mouse(pvmulti_client vmulti, BYTE button,
+                         USHORT x, USHORT y, BYTE wheelPosition, BYTE hWheelPosition)
 {
     VMultiControlReportHeader* pReport = NULL;
     VMultiMouseReport* pMouseReport = NULL;
@@ -159,13 +165,14 @@ BOOL vmulti_update_mouse(pvmulti_client vmulti, BYTE button, USHORT x, USHORT y,
     pMouseReport->XValue = x;
     pMouseReport->YValue = y;
     pMouseReport->WheelPosition = wheelPosition;
+    pMouseReport->HWheelPosition = hWheelPosition;
 
     // Send the report
     return HidOutput(FALSE, vmulti->hControl, (PCHAR)vmulti->controlReport, CONTROL_REPORT_SIZE);
 }
 
 BOOL vmulti_update_relative_mouse(pvmulti_client vmulti, BYTE button,
-BYTE x, BYTE y, BYTE wheelPosition, BYTE hWheelPosition)
+                                  BYTE x, BYTE y, BYTE wheelPosition, BYTE hWheelPosition)
 {
     VMultiControlReportHeader* pReport = NULL;
     VMultiRelativeMouseReport* pMouseReport = NULL;

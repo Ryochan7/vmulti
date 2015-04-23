@@ -160,7 +160,7 @@ SendHidRequests(
             // Send the mouse report
             //
             printf("Sending mouse report\n");
-            vmulti_update_mouse(vmulti, 0, 1000, 10000, 0);
+            vmulti_update_mouse(vmulti, 0, 1000, 10000, 0, 0);
             break;
 
         case REPORTID_DIGI:
