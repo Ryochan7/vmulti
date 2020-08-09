@@ -197,8 +197,8 @@ BOOL vmulti_update_relative_mouse(pvmulti_client vmulti, BYTE button,
     pMouseReport = (VMultiRelativeMouseReport*)(vmulti->controlReport + sizeof(VMultiControlReportHeader));
     pMouseReport->ReportID = REPORTID_RELATIVE_MOUSE;
     pMouseReport->Button = button;
-    pMouseReport->XValue = x;
-    pMouseReport->YValue = y;
+    pMouseReport->XValue = (signed char)x;
+    pMouseReport->YValue = (signed char)y;
     pMouseReport->WheelPosition = wheelPosition;
     pMouseReport->HWheelPosition = 0;
 
