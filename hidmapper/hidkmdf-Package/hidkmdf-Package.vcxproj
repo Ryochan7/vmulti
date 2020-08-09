@@ -51,7 +51,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="PropertySheets">
-    <PlatformToolset>WindowsKernelModeDriver8.1</PlatformToolset>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
     <ConfigurationType>Utility</ConfigurationType>
     <DriverType>Package</DriverType>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>

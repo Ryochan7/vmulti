@@ -183,8 +183,8 @@ typedef struct _VMULTI_MOUSE_REPORT
 // Relative mouse specific report information
 //
 
-#define RELATIVE_MOUSE_MIN_COORDINATE   -127
-#define RELATIVE_MOUSE_MAX_COORDINATE   127
+#define RELATIVE_MOUSE_MIN_COORDINATE   -32767
+#define RELATIVE_MOUSE_MAX_COORDINATE   32767
 
 #pragma pack(1)
 typedef struct _VMULTI_RELATIVE_MOUSE_REPORT
@@ -194,9 +194,9 @@ typedef struct _VMULTI_RELATIVE_MOUSE_REPORT
 
     BYTE        Button;
 
-    BYTE        XValue;
+    USHORT      XValue;
 
-    BYTE        YValue;
+    USHORT      YValue;
 
     BYTE        WheelPosition;
 
