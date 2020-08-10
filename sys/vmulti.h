@@ -177,7 +177,7 @@ HID_REPORT_DESCRIPTOR DefaultReportDescriptor[] = {
     0x05, 0x01,                         //     USAGE_PAGE (Generic Desktop)
     0x09, 0x30,                         //     USAGE (X)
     0x09, 0x31,                         //     USAGE (Y)
-    0x16, 0xFF, 0x7F,                   //     Logical Minimum (-32767)
+    0x16, 0xFF, 0x81,                   //     Logical Minimum (-32767)
     0x26, 0xFF, 0x7F,                   //     Logical Maximum (32767)
     0x75, 0x10,                         //     REPORT_SIZE (16)
     0x95, 0x02,                         //     REPORT_COUNT (2)
